@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50715
 File Encoding         : 65001
 
-Date: 2016-10-31 20:08:10
+Date: 2016-10-31 22:46:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -64,11 +64,11 @@ DROP TABLE IF EXISTS `consultorio`;
 CREATE TABLE `consultorio` (
   `id_consultorio` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `medico_crm` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `telefone` int(11) NOT NULL,
+  `telefone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `cep` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `endereco` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `numero` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `complemento` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `complemento` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `bairro` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `cidade` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `estado` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -77,11 +77,36 @@ CREATE TABLE `consultorio` (
   PRIMARY KEY (`id_consultorio`),
   KEY `consultorio_medico_crm_foreign` (`medico_crm`),
   CONSTRAINT `consultorio_medico_crm_foreign` FOREIGN KEY (`medico_crm`) REFERENCES `medicos` (`crm`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of consultorio
 -- ----------------------------
+INSERT INTO `consultorio` VALUES ('1', '73413', '1145864444', '13208056', 'Av Nove de Julho', '1717', 'Conj 42 Ed Saint Georges', 'Vila Boaventura', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('2', '26195', '1145834776', '13209000', 'Rua do Retiro', '424', null, 'Vila Virginia', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('3', '96233', '1144970651', '13201843', 'Av Antonio Segre', '333', null, 'Jardim Brasil', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('4', '83762', '1198367886', '13208761', 'Rua Barão de Teffé', '1000', '2 andar, sala 21', 'Jardim Ana Maria', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('5', '88579', '1145869288', '13207130', 'Rua Atilio Vianelo', '310', null, 'Vianelo', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('6', '63151', '1145227237', '13208140', 'Rua Abilio Figueiredo', '92', null, 'Anhangabau', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('7', '113297', '1145213155', '13209000', 'Rua do Retiro', '432', null, 'Anhangabau', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('8', '67787', '1145230595', '13201098', 'Rua Vasco da Gama', '23', null, 'Vila Municipal', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('9', '137141', '1148071024', '13201838', 'Rua Sócrates Fernandes de Oliveira', '45', null, 'Chacara Urbana', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('10', '115386', '1145213155', '13208761', 'Rua Barão de Teffé', '1000', 'sala 52', 'Jardim Ana Maria', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('11', '98709', '1145834776', '13209000', 'Rua do Retiro', '424', null, 'Vila Virginia', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('12', '102002', '1148071024', '13200000', 'Rua Socrates Fernandes de Oliveira', '45', null, 'Chacara Urbana', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('13', '66463', '1145217121', '13208760', 'Rua Barão de Teffe', '160', null, 'Anhangabau', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('14', '104139', '1148072240', '13208060', 'Av Amadeu Ribeiro', '265', null, 'Anhangabau', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('15', '124262', '11984974855', '13201796', 'Rua Ademar Pereira de Barros', '21', null, 'Centro', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('16', '129483', '1148072240', '13208060', 'Av Amadeu Ribeiro', '265', null, 'Anhangabau', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('17', '79998', '1148052700', '13201043', 'Rua Conrado Augusto Offa', '80', null, 'Chacara Urbana', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('18', '108576', '11944450022', '13208056', 'Av 9 de julho', '2575', null, 'Anhangabau', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('19', '26252', '1145211697', '13209000', 'Rua do Retiro', '424', null, 'Vilia VIirginia', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('20', '114657', '1145261837', '13206810', 'Rua Portugal', '295', null, 'Jardim Cica', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('21', '108742', '1128162705', '13207270', 'Rua Bom Jesus de Pirapora', '315', null, 'Vianelo', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('22', '139810', '1148072240', '13208060', 'Rua Amadeu Ribeiro', '265', null, 'Anhangabau', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('23', '147503', '1144970033', '13201796', 'Av 9 de julho', '32', null, 'Anhangabau', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('24', '116494', '1145214798', '13209090', 'Rua Eduardo Tomanik', '900', null, 'Chacara Urbana', 'Jundiai', 'SP', '1', '1');
+INSERT INTO `consultorio` VALUES ('25', '140984', '11940130333', '13207060', 'Rua Conde de Monsanto', '483', null, 'Vianelo', 'Jundiai', 'SP', '1', '1');
 
 -- ----------------------------
 -- Table structure for convenio
